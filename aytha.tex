@@ -1,0 +1,222 @@
+%-------------------------
+% Resume in Latex
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+
+
+\usepackage{ifthen}
+
+
+%%%%%%%%%%%%%%%  VARIABLES %%%%%%%%%%%%%%%
+\newboolean{bigdata}
+%\setboolean{bigdata}{true}
+\setboolean{bigdata}{false}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingEnvironmentAndTools}[1]{\textbf{Environment/Tools:}{ #1}}
+
+
+\newcommand{\cplusplus}{C\texttt{++}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\Large Vasavi Aytha}} & Email : \href{mailto:vasavipravallika@gmail.com}{vasavipravallika@gmail.com}\\
+  & Mobile : +1-209-782-7284 \\
+\end{tabular*}
+
+
+\begin{comment}
+Engineering %age as far as I remeber is 86% (Or is it 76%?). Figure it out when you find time!!
+\end{comment}
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {G Pulla Reddy College of Engineering and Technology}{Kurnool, India}
+      {Bachelor of Engineering in Electrical and Electronics}{Aug. 2007 -- July. 2011}
+  \resumeSubHeadingListEnd
+
+
+%--------PROGRAMMING SKILLS------------
+\section{Programming Skills}
+  \resumeSubHeadingListStart
+
+    \resumeSubItem{Languages} {VBScript}
+    \resumeSubItem{Databases} {DBSQL, MS SQL Server}
+    \resumeSubItem{MS Office Tools} {MS-Word, MS-Excel MS-Outlook}
+    \resumeSubItem{Testing Tools} {Quality Center, QTP, ALM}
+    \resumeSubItem{Operating Systems} {Windows, Linux(Ubuntu)}
+    
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      %https://www.deere.com/en/technology-products/precision-ag-technology/guidance/gen-4-premium-activation/
+      {Kexim Bank}{Bangalore, India}
+      {Quality Analyst}{Jun 2013 - Jul 2014}
+      \resumeItemListStart
+        \resumeItem{Gen4 CommandCenter\texttrademark\ Displays}
+          {Develop software for displays of family of Autotrack guidance agriculture machines (like tractors) which farmers use for Presicion Agriculture.}
+        \resumeItem{Defects Triaging}
+          {Initial triaging/analysing of defects that are logged by farm testers to be assigned to right team. This needs a robust knowledge of the entire system and involves a lot of communication with various teams.}
+        \resumeItem{Reprogramming Firmware}
+          {Develop Reprogramming module which deals with installation and updates of Gen4 CommandCenter\texttrademark\ Display.}
+
+
+        \ifthenelse {\boolean{bigdata}} { 
+        \resumeItem{Statistical Analysis} 
+          {Designed experiments and developed statistical analysis for global weather, crop and nutrients to quantify and predict related risks using scala.} 
+        }
+        {}
+
+
+      \resumeItemListEnd
+      \resumeSubHeadingEnvironmentAndTools{\cplusplus, Qt/QtCreatorIDE, python, \ifthenelse {\boolean{bigdata}} {Scala,} {}   bash, Multithreading, Agile, mercurial, git, CAN-protocol, sqlite-db, TestDrivenDevelopment(TDD), gtest, Squish(UI-Testing), Cucumber, gperf, valgrind, yum(package manager)}
+
+    \resumeSubheading
+      {Bloomberg}{Manhattan, NY}
+      {Software Engineer}{Apr 2013 - May 2015}
+      \resumeItemListStart
+        \resumeItem{STEP (Add on software for OrderManagementSystem)}
+         {Develop STEP Software which integrates with the various OMS products available in the market that helps traders to automate from sending IOIs (Indication of interest) and ADVs(Advertisement) without human intervention.}
+        \resumeItem{Tool to test STEP}
+         {Developed a test tool which will inject Orders that otherwise would have been sent by the associated OMS. This tool would generate all possible fix messages(like NewOrder/ FilledOrder/ PartialFill/ Cancel/ Replace) which was extensively used to test the main product (STEP) which we were developing.}
+      \resumeItemListEnd
+      \resumeSubHeadingEnvironmentAndTools{\cplusplus, JavaScript, Unix(AIX,  HP-UX,  Solaris), RAPID(UI development framework), SQL, ComDB, STL, FIX-protocol, Service orientied architecture, XML, Multithreading (IPC), OOP, svn.}
+
+
+    \resumeSubheading
+      %https://www.toshibatec.com/cnt/products_overseas/MFP/
+      {Toshiba}{Bangalore, India}
+      {Quality Analyst}{Aug 2011 - Feb 2013}
+      \resumeItemListStart
+        \resumeItem{Regression Testing}
+          {Develop firmware for Toshiba's vast range of Multi Function Peripherals(MFPs) in \cplusplus and WindriverLinux.}
+        \resumeItem{Onsite Coordinator}
+          {Get involved with architecture team at client location and communicate the requirements to offshore team. Was in this role for about an year.}
+        \resumeItem{Integration}
+          {Integration of all three layers at the client location (Toshiba, Japan) by coordinating with all the teams.}
+        \resumeItem{MFPUtility Libraries}
+          {Develop algorithms/libraries specific to printers (like Magnification\%, Drawer selection, ExitTray selection, Staple/Duplex judgment.}
+      \resumeItemListEnd
+      \resumeSubHeadingEnvironmentAndTools{\cplusplus, Linux  IPCs,  Multithreading, Windriver  Linux,  PowerPC,  bash  scripting,  PVCS(version control), sqlite-db, awk, sed, valgrind}
+
+    \resumeSubheading
+      {Mindtree}{Bangalore, India}
+      {Internship Project}{Dec 2005 - Mar 2006}
+      \resumeItemListStart
+\begin{comment}
+Developing matlab model CVSD encoder/decoder for Bluetooth: 
+\end{comment}
+        \resumeItem{CVSD encode/decoder}
+          {Develop a MATLAB model for CVSD encoder/decoder (which is an Audio CODEC) as per Bluetooth CVSD specification and do the performance analysis to find the best parameters.}
+      \resumeItemListEnd
+      %\resumeSubHeadingEnvironmentAndTools{Matlab, Bluetooth CVSD spec/algorithms, CVS}
+
+
+  \resumeSubHeadingListEnd
+
+
+
+
+
+\begin{comment}
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem{QuantSoftware Toolkit}
+      {Open source python library for financial data analysis and machine learning for finance.}
+    \resumeSubItem{Github Visualization}
+      {Data Visualization of Git Log data using D3 to analyze project trends over time.}
+    \resumeSubItem{Recommendation System}
+      {Music and Movie recommender systems using collaborative filtering on public datasets.}
+    \resumeSubItem{Mac Setup}
+      {Book that gives step by step instructions on setting up developer environment on Mac OS.}
+  \resumeSubHeadingListEnd
+\end{comment}
+
+
+
+%
+%--------PROGRAMMING SKILLS------------
+%\section{Programming Skills}
+%  \resumeSubHeadingListStart
+%    \item{
+%      \textbf{Languages}{: Scala, Python, Javascript, \cplusplus, SQL, Java}
+%      \hfill
+%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
+%    }
+%  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
